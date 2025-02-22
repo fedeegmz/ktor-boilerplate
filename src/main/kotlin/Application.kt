@@ -14,12 +14,13 @@ fun main(args: Array<String>) {
 
 fun Application.module() {
     val config = Config()
+    val database = DatabaseProvider()
 
     install(Koin) {
         modules(
             module {
                 single { config }
-                single<DatabaseProviderContract> { DatabaseProvider() }
+                single<DatabaseProviderContract> { database }
             },
         )
     }
@@ -27,5 +28,6 @@ fun Application.module() {
         json()
     }
 
+    database.init()
     configureRouting()
 }

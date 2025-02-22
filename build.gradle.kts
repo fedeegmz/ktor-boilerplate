@@ -31,6 +31,7 @@ dependencies {
     implementation(libs.dotenv)
     implementation(libs.koin)
     implementation(libs.koin.logger)
+    implementation(libs.postgresql)
     implementation(libs.exposed.core)
     implementation(libs.exposed.dao)
     implementation(libs.exposed.jdbc)
